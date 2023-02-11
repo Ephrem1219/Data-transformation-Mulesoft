@@ -6,7 +6,7 @@
 http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/file/current/mule-file.xsd
 http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
 	<flow name="data-transformationFlow" doc:id="139f14a6-ff49-4acd-95fc-c2041b487fa6" >
-		<file:listener doc:name="On New or Updated File" doc:id="c87cd8d2-5863-41d2-9a53-b354cbb82ed7" directory="C:\ephar\data transformation\Input" autoDelete="true" moveToDirectory="C:\ephar\data transformation\backup" renameTo="#[&quot;Backup-&quot; ++ now() as String{format: 'Y-M-D-H-m-s'} ++ &quot;-&quot; ++ vars.fileName]" outputMimeType="application/xml">
+		<file:listener doc:name="On New or Updated File" doc:id="c87cd8d2-5863-41d2-9a53-b354cbb82ed7" directory="C:\ephar\data transformation\Input" autoDelete="true" moveToDirectory="C:\ephar\data transformation\backup" renameTo="#[&quot;Backup-&quot; ++ now() as String{format: 'Y-M-D-H-m-s'} ++ &quot;-&quot; ++ vars.fileName]" outputMimeType="application/xml" doc:description="This is the trigger and it starts the flow when there is new file in the specified folders.">
 			<scheduling-strategy >
 				<fixed-frequency frequency="10" timeUnit="SECONDS"/>
 			</scheduling-strategy>
